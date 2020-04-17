@@ -33,8 +33,10 @@ export class EmployeesComponent implements OnInit {
     .subscribe(data => this.employees = data.data);
     //this.employees.
 
+
     this._employeesservice.getEmployee()
     .subscribe(data => this.employee1 = data.data)
+    
   }
 
 }
