@@ -27,13 +27,14 @@ export class EmployeesService {
   getEmployee() : Observable<IResponse>
   {
      return this._httpE.get<IResponse>(this._urlE1)
-                .pipe(catchErrror(this.errorHandler));
+               // .pipe(catchErrror(this.errorHandler));
+               .catch(this.errorHandler);
                      
   }
 
  errorHandler(error : HttpErrorResponse){
     
-    return Observable.throw(error.message | "Server Error");
+    return Observable.throw(error.message || "Server Error");
 
 }
 
